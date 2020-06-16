@@ -38,7 +38,7 @@ jobs:
       run: mv index.html 200.html  
     - name: Run Surge
       working-directory: './build'
-      run: surge ./ gentlemencatlumber.surge.sh --token ${{secrets.MY_SURGE_TOKEN}}
+      run: surge ./ 01hasan.surge.sh --token ${{secrets.MY_SURGE_TOKEN}}
     - name: show files
       working-directory: './build'
       run: ls
