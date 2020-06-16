@@ -1,11 +1,10 @@
-import React, {useContext, useState} from 'react'
-import {GlobalContext} from '../context/GlobalState';
-
+import React, { useContext, useState } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 const AddTransaction = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState();
-  const {addTransaction} = useContext(GlobalContext);
+  const { addTransaction } = useContext(GlobalContext);
 
   const handleChangeText = (event) => {
     setText(event.target.value);
@@ -13,17 +12,17 @@ const AddTransaction = () => {
   const handleChangeAmount = (event) => {
     setAmount(event.target.value);
   };
-  const handleSubmit = event => {
-      event.preventDefault();
-      const newTransaction = {
-          id: Math.floor(Math.random() * 100000000),
-          text,
-          amount: +amount
-      }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newTransaction = {
+      id: Math.floor(Math.random() * 100000000),
+      text,
+      amount: +amount,
+    };
     addTransaction(newTransaction);
-    setText('');
-    setAmount('');
-  }
+    setText("");
+    setAmount("");
+  };
 
   return (
     <>

@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import CountUp from "react-countup";
 import {GlobalContext} from '../context/GlobalState'
 const Balance = () => {
     //storing transactions object array from global context in same name variable
@@ -12,7 +13,9 @@ const Balance = () => {
     return (
         <div>
             <h4>Your Balance</h4>
-    <h1 id="balance">${total}</h1>
+    <h1 id="balance">
+        $<CountUp end={total} />
+    </h1>
         </div>
     )
 }
