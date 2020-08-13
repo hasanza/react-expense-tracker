@@ -2,7 +2,8 @@ import React, {useContext} from 'react'
 import CountUp from "react-countup";
 import {GlobalContext} from '../context/GlobalState'
 const Balance = () => {
-    //storing transactions object array from global context in same name variable
+    //storing transactions object array from global context in same name variable via destructuring
+    //globalContext returns obj.transafctions and we are destructuring it. 
     const {transactions} = useContext(GlobalContext);
     //storing total amount of all transactions in variable. Get amounts into an array
     const amounts = transactions.map(transaction => transaction.amount);//returns an array of only the amounts

@@ -10,6 +10,7 @@ export const GlobalContext = createContext(initialState);
 
 //creating and exporting the Provider Component. Children are the componets around whom it will be wrapped
 export const GlobalProvider = ({ children }) => {
+    //now, all components inside Provider can access/ change the transaction state, delete and Add functions.
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   //Actions, Which will be dispatched/ make calls to the reducer
@@ -30,6 +31,7 @@ export const GlobalProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        //transactions property is the state being shared across children
         transactions: state.transactions,
         //gotta pass down deleteTransaction function so children are able to use it
         deleteTransaction,

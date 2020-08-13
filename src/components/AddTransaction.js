@@ -2,8 +2,10 @@ import React, { useContext, useState } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 const AddTransaction = () => {
+  //this is the local state. We need to keep track of text and amount before storing it in global state...
   const [text, setText] = useState("");
   const [amount, setAmount] = useState();
+  // destructuring and using addTransaction function from the GlobalContext
   const { addTransaction } = useContext(GlobalContext);
 
   const handleChangeText = (event) => {
@@ -47,7 +49,7 @@ const AddTransaction = () => {
           <input
             type="number"
             id="amount"
-            value={amount}
+            //value={amount}
             onChange={handleChangeAmount}
             placeholder="Enter amount..."
           ></input>
